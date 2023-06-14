@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1px;
+}
+
+div {
+  margin: 10px;
+}
+button {
+  margin-right: 10px;
+}
+input {
+  margin: 0;
+}
+.title {
+  margin: 10px 5px 10px;
+}
+.nome {
+  margin-left: 5px;
+  padding-right: 5px;
+  
+}
+.price {
+  margin-left: 5px;
+  padding-right: 5px;
+}
