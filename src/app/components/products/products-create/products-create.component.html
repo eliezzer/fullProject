@@ -6,9 +6,17 @@
       <input matInput name="name" [(ngModel)]="product.name" />
     </mat-form-field>
 
-    <mat-form-field class="price">
+    <mat-form-field class="costPrice">
       <mat-label >Preço R$</mat-label>
-      <input matInput name="price" [(ngModel)]="product.price" />
+      <input matInput name="costPrice" [(ngModel)]="product.costPrice" />
+    </mat-form-field>
+    <mat-form-field class="markup">
+      <mat-label >Margem de lucro (%) </mat-label>
+      <input matInput name="markup" [(ngModel)]="product.markup" />
+    </mat-form-field>
+    <mat-form-field class="salePrice">
+      <mat-label >Preço R$</mat-label>
+      <input matInput name="salePrice" [(ngModel)]="product.salePrice" />
     </mat-form-field>
   </form>
   <div>

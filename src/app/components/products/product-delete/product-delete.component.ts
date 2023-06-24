@@ -9,8 +9,10 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./product-delete.component.css"],
 })
 export class ProductDeleteComponent implements OnInit {
-  product: Product = { name: "", price: null };
+  product: Product = { name: "", costPrice: 0, salePrice: 0, markup: 0 };
   ngOnInit(): void {
+    console.log('nnnoooo');
+    
     const id = this.route.snapshot.paramMap.get("id");
     this.productService.readById(id).subscribe((p) => (this.product = p));
   }

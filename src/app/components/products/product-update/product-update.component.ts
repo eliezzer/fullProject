@@ -9,7 +9,7 @@ import { Product } from "../product.model";
   styleUrls: ["./product-update.component.css"],
 })
 export class ProductUpdateComponent implements OnInit {
-  product: Product = {name: '', price: null};
+  product: Product = {name: '', costPrice: null, salePrice: null, markup: null};
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
     this.productService.readById(id).subscribe((p) => (this.product = p));
