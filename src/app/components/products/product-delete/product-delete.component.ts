@@ -10,12 +10,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class ProductDeleteComponent implements OnInit {
   product: Product = { name: "", costPrice: 0, salePrice: 0, markup: 0 };
-  ngOnInit(): void {
-    console.log('nnnoooo');
-    
-    const id = this.route.snapshot.paramMap.get("id");
-    this.productService.readById(id).subscribe((p) => (this.product = p));
-  }
 
   constructor(
     private productService: ProductService,
@@ -23,6 +17,12 @@ export class ProductDeleteComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get("_id");
+    this.productService.readById(id).subscribe((p) => {
+      this.product = p;
+    });
+  }
   deleteProduct(): void {
     this.productService.delete(this.product).subscribe(() => {
       this.productService.showMessage("Produto Excluído!");
@@ -35,7 +35,6 @@ export class ProductDeleteComponent implements OnInit {
   }
   @Output() confirmarExclusaoEvent = new EventEmitter<boolean>();
   @Output() fecharModalEvent = new EventEmitter<boolean>();
-
 
   fecharModal() {
     this.fecharModalEvent.emit(true);

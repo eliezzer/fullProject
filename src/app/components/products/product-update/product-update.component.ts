@@ -11,7 +11,7 @@ import { Product } from "../product.model";
 export class ProductUpdateComponent implements OnInit {
   product: Product = {name: '', costPrice: null, salePrice: null, markup: null};
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get("id");
+    const id = this.route.snapshot.paramMap.get("_id");
     this.productService.readById(id).subscribe((p) => (this.product = p));
   }
 

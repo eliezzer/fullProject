@@ -33,18 +33,19 @@ export class ProductService {
   findAll(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl)
   }
-  readById(id:any): Observable<Product> {
-    const url = `${this.baseUrl}/${id}`
+  readById(_id:any): Observable<Product> {
+    const url = `${this.baseUrl}/${_id}`
     return this.http.get<Product>(url)
   }
   update(product: Product): Observable<Product> {
-    const url = `${this.baseUrl}/${product.id}`
+    const url = `${this.baseUrl}/${product._id}`
     return this.http.put<Product>(url, product).pipe(map(obj => obj), catchError(e => this.errorHandler(e)))
   }
   delete(product: Product): Observable<Product> {
-    console.log('ssewewrads');
-    const url = `${this.baseUrl}/${product.id}`
+    console.log(product);
     
+    const url = `${this.baseUrl}/${product._id}`
+
     return this.http.delete<Product>(url).pipe(map(obj => obj), catchError(e => this.errorHandler(e)))
   }
 }
