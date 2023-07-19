@@ -32,6 +32,9 @@ import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import { ProductUpdateComponent } from './components/products/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/products/product-delete/product-delete.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatIconModule} from "@angular/material/icon";
 registerLocaleData(localePt);
 
 @NgModule({
@@ -49,25 +52,28 @@ registerLocaleData(localePt);
     ProductRead2Component,
     ProductUpdateComponent,
     ProductDeleteComponent,
+    ProductListComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    HttpClientModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatCardModule,
+        MatButtonModule,
+        MatSnackBarModule,
+        HttpClientModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatButtonToggleModule,
+        MatIconModule,
+    ],
   providers: [{ provide: LOCALE_ID, useValue: "pt-BR" }],
   bootstrap: [AppComponent],
 })

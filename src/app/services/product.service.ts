@@ -23,7 +23,7 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product> {
-    const url = `${this.baseUrl}/create`
+    const url = `${this.baseUrl}`
     return this.http.post<Product>(url, product).pipe(map(obj => obj), catchError(e => this.errorHandler(e)))
   }
   errorHandler( e: any): Observable<Product> {
@@ -43,7 +43,7 @@ export class ProductService {
   }
   delete(product: Product): Observable<Product> {
     console.log(product);
-    
+
     const url = `${this.baseUrl}/${product._id}`
 
     return this.http.delete<Product>(url).pipe(map(obj => obj), catchError(e => this.errorHandler(e)))
